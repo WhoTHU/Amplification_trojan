@@ -13,7 +13,7 @@ All the codes are tested in the following environment:
 ### 2. Train the trojan network
 We provide the code for training the amplification trojan networks (ATNets) described in the paper. Users can specify the arguments according to their own requirements. They can use the code to train the ATNets on MNIST and CIFAR10 using untargeted C-FGSM, targeted C-FGSM, untargeted C-BIM and targeted C-BIM, to target a pre-trained network. 
 
-The pretrained network should be defined in "./models", and its checkpoints should be located in "./checkpoints".
+The targeted network should be defined in "./models", and its pretrained checkpoints should be placed in "./checkpoints".
 
 As an example, one can train an ATNet on MNIST using untargeted C-FGSM to target a pre-trained small CNN by
 ```
