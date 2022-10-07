@@ -45,7 +45,7 @@ parser.add_argument('--th', type=float, default=0.0)
 parser.add_argument('--eps_range', default=False, action='store_true')
 
 
-parser.add_argument('--attack', default='PFGSM')
+parser.add_argument('--attack', default='CFGSMUT')
 parser.add_argument('--target', default=None)
 parser.add_argument('--iters',type=int, default=10)
 parser.add_argument('--eps', type=float, default=0.3)
@@ -179,7 +179,7 @@ def train(net, trojan, optimizer, steps):
 
         outputs_dir = net(inputs_adv)
 
-        if adv_args.attack == 'PFGSM' or adv_args.attack == 'PGDUT':
+        if adv_args.attack == 'CFGSMUT' or adv_args.attack == 'CBIMUT':
             loss_3 = args.cs[2] * F.cross_entropy(-outputs_adv, labels)
         else:
             loss_3 = args.cs[2] * F.cross_entropy(outputs_adv, labels_target)

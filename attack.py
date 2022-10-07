@@ -7,7 +7,7 @@ def get_adv(net, trojan, inputs, labels, args):
     return globals()[args.attack](net, trojan, inputs, labels, args)
 
 
-def PFGSM(net, trojan, inputs, labels, args):
+def CFGSMUT(net, trojan, inputs, labels, args):
     eps = args.eps
     if args.target is None:
         labels_target = (labels + labels.new(labels.size()).random_(1, args.num_class)).remainder(args.num_class)
@@ -41,7 +41,7 @@ def PFGSM(net, trojan, inputs, labels, args):
     return inputs_adv.detach(), labels_target
 
 
-def PFGSMT(net, trojan, inputs, labels, args):
+def CFGSMT(net, trojan, inputs, labels, args):
     eps = args.eps
     if args.target is None:
         labels_target = (labels + labels.new(labels.size()).random_(1, args.num_class)).remainder(args.num_class)
@@ -76,7 +76,7 @@ def PFGSMT(net, trojan, inputs, labels, args):
     return inputs_adv.detach(), labels_target
 
 
-def BIM(net, trojan, inputs, labels, args):
+def CBIMT(net, trojan, inputs, labels, args):
     eps = args.eps
     iters = args.iters
     if hasattr(args, 'eps_iter') and args.eps_iter is not None:
@@ -120,7 +120,7 @@ def BIM(net, trojan, inputs, labels, args):
 
 
 
-def BIMUT(net, trojan, inputs, labels, args):
+def CBIMUT(net, trojan, inputs, labels, args):
     eps = args.eps
     iters = args.iters
     if hasattr(args, 'eps_iter') and args.eps_iter is not None:
