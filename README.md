@@ -1,5 +1,5 @@
 # Amplification trojan network: Attack deep neural networks by amplifying their inherent weakness
-This is the official implementation of the paper "Amplification trojan network: Attack deep neural networks by amplifying their inherent weakness".
+This is the official repository for the paper [Amplification trojan network: Attack deep neural networks by amplifying their inherent weakness](https://www.sciencedirect.com/science/article/abs/pii/S0925231222008773).
 
 ### 1. Requirements
 All the codes are tested in the following environment:
